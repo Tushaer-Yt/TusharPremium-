@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UCHIHA WORLD</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#080d1b;
+    color:white;
+    font-family:Arial,sans-serif;
+    padding:20px 15px;
+}
+
+header{
+    text-align:center;
+    margin:30px auto 65px;
+}
+
+.logo{
+    width:145px;
+    height:145px;
+    border:3px solid #00ed91;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 0 30px #00ff9955;
+}
+
+.logo svg{
+    width:105px;
+    height:105px;
+}
+
+h1{
+    font-size:38px;
+    margin-top:30px;
+    letter-spacing:3px;
+    text-shadow:0 0 15px #00ff99;
+}
+
+.subtitle{
+    color:#929bad;
+    font-size:12px;
+    letter-spacing:3px;
+    margin-top:18px;
+}
+
+.container{
+    max-width:550px;
+    margin:auto;
+    padding:30px;
+    background:#1a2436;
+    border:1px solid #303b50;
+    border-radius:25px;
+}
+
+input{
+    width:100%;
+    padding:22px;
+    background:#101827;
+    border:1px solid #00d982;
+    border-radius:12px;
+    color:white;
+    font-size:18px;
+    outline:none;
+    margin-bottom:25px;
+}
+
+input:focus{
+    box-shadow:0 0 12px #00d98255;
+}
+
+.generate{
+    width:100%;
+    padding:22px;
+    border:0;
+    border-radius:13px;
+    background:linear-gradient(90deg,#00d46a,#65e000);
+    color:#001b0c;
+    font-size:23px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.generate:active{
+    transform:scale(.98);
+}
+
+.section{
+    max-width:550px;
+    margin:55px auto;
+    padding:25px;
+    background:#111a2c;
+    border-radius:20px;
+    border-left:7px solid #00ee91;
+}
+
+.medium{
+    border-color:#ffae00;
+}
+
+.normal{
+    border-color:#00cfff;
+}
+
+.heading{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.icon{
+    width:65px;
+    height:65px;
+    border-radius:14px;
+    background:#10312f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+}
+
+.medium .icon{
+    background:#302b1c;
+}
+
+.normal .icon{
+    background:#102b40;
+}
+
+.title{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.description{
+    color:#929bad;
+    font-size:14px;
+    margin-top:8px;
+}
+
+.line{
+    height:2px;
+    background:#303b50;
+    margin-bottom:25px;
+}
+
+.password{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:17px;
+    margin:15px 0;
+    background:#202b40;
+    border-radius:9px;
+}
+
+.password span{
+    font-size:17px;
+    word-break:break-all;
+    font-family:monospace;
+}
+
+.copy{
+    background:#00d982;
+    color:#001b0c;
+    border:0;
+    padding:10px 13px;
+    border-radius:7px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+footer{
+    margin:55px -15px -20px;
+    padding:40px 15px;
+    background:#050914;
+    text-align:center;
+}
+
+.footer-title{
+    color:#7c8497;
+    letter-spacing:3px;
+    margin-bottom:25px;
+    font-size:13px;
+}
+
+.developer{
+    display:inline-block;
+    padding:20px 35px;
+    border:1px solid #303747;
+    border-radius:50px;
+    font-size:19px;
+    font-weight:bold;
+    letter-spacing:3px;
+    line-height:1.6;
+    box-shadow:0 0 15px #000;
+}
+
+@media(max-width:400px){
+
+    h1{
+        font-size:30px;
+    }
+
+    .container,.section{
+        padding:20px;
+    }
+
+    .password span{
+        font-size:14px;
+    }
+
+    .developer{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<svg viewBox="0 0 100 100">
+
+<circle cx="50" cy="50" r="43"
+fill="#170710"
+stroke="#00ed91"
+stroke-width="2"/>
+
+<circle cx="50" cy="50" r="9"
+fill="#ff1744"/>
+
+<g fill="#ff1744">
+
+<path d="M50 12 Q73 18 62 37 Q54 30 50 12Z"/>
+
+<path d="M87 63 Q75 84 59 68 Q69 63 87 63Z"/>
+
+<path d="M19 75 Q10 52 34 49 Q31 62 19 75Z"/>
+
+</g>
+
+</svg>
+
+</div>
+
+<h1>UCHIHA WORLD</h1>
+
+<p class="subtitle">
+PROFESSIONAL PASSWORD GENERATION TOOL
+</p>
+
+</header>
+
+
+<!-- INPUT AREA -->
+
+<div class="container">
+
+<input
+type="text"
+id="username"
+placeholder="Enter Your Name"
+maxlength="30"
+>
+
+<button class="generate" onclick="generatePasswords()">
+🔒 GENERATE
+</button>
+
+</div>
+
+
+<!-- HARD -->
+
+<div class="section">
+
+<div class="heading">
+
+<div class="icon">🛡️</div>
+
+<div>
+<div class="title">HARD</div>
+<div class="description">
+High Entropy · Max Security
+</div>
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div id="hard"></div>
+
+</div>
+
+
+<!-- MEDIUM -->
+
+<div class="section medium">
+
+<div class="heading">
+
+<div class="icon">⚠️</div>
+
+<div>
+<div class="title">MEDIUM</div>
+<div class="description">
+Balanced · Standard Use
+</div>
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div id="medium"></div>
+
+</div>
+
+
+<!-- NORMAL -->
+
+<div class="section normal">
+
+<div class="heading">
+
+<div class="icon">🔑</div>
+
+<div>
+<div class="title">NORMAL</div>
+<div class="description">
+Memorable · Easy Access
+</div>
+</div>
+
+</div>
+
+<div class="line"></div>
+
+<div id="normal"></div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-title">
+DEVELOPED BY
+</div>
+
+<div class="developer">
+DEVELOPER<br>
+TUSHAR UCHIHA
+</div>
+
+</footer>
+
+
+<script>
+
+// RANDOM NUMBER
+
+function rand(max){
+
+    const arr = new Uint32Array(1);
+
+    crypto.getRandomValues(arr);
+
+    return arr[0] % max;
+
+}
+
+
+// RANDOM CHARACTER
+
+function pick(chars){
+
+    return chars[rand(chars.length)];
+
+}
+
+
+// RANDOM CASE
+
+function changeCase(name){
+
+    return [...name].map(c => {
+
+        if(!/[a-z]/i.test(c)) return c;
+
+        return rand(2)
+        ? c.toUpperCase()
+        : c.toLowerCase();
+
+    }).join("");
+
+}
+
+
+// HARD PASSWORD
+
+function hardPassword(name){
+
+    const chars =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=";
+
+    let result = "";
+
+    for(let c of name){
+
+        result += /[a-z]/i.test(c)
+        ? (rand(2) ? c.toUpperCase() : c.toLowerCase())
+        : c;
+
+        if(rand(3) !== 0){
+
+            result += pick(chars);
+
+        }
+
+    }
+
+    while(result.length < 20){
+
+        let pos = rand(result.length + 1);
+
+        result =
+        result.slice(0,pos) +
+        pick(chars) +
+        result.slice(pos);
+
+    }
+
+    return result;
+
+}
+
+
+// MEDIUM PASSWORD
+
+function mediumPassword(name){
+
+    const symbols = "!@#$%&*";
+
+    return changeCase(name) +
+    pick(symbols) +
+    (100 + rand(900));
+
+}
+
+
+// NORMAL PASSWORD
+
+function normalPassword(name){
+
+    return name + (10 + rand(990));
+
+}
+
+
+// CREATE PASSWORD CARDS
+
+function showPasswords(id,name,type){
+
+    const box = document.getElementById(id);
+
+    box.innerHTML = "";
+
+    for(let i=0;i<5;i++){
+
+        let password;
+
+        if(type === "hard"){
+
+            password = hardPassword(name);
+
+        }
+
+        else if(type === "medium"){
+
+            password = mediumPassword(name);
+
+        }
+
+        else{
+
+            password = normalPassword(name);
+
+        }
+
+
+        const row = document.createElement("div");
+
+        row.className = "password";
+
+
+        const span = document.createElement("span");
+
+        span.textContent = password;
+
+
+        const btn = document.createElement("button");
+
+        btn.className = "copy";
+
+        btn.textContent = "COPY";
+
+
+        btn.onclick = async function(){
+
+            try{
+
+                await navigator.clipboard.writeText(password);
+
+            }
+
+            catch(e){
+
+                const area = document.createElement("textarea");
+
+                area.value = password;
+
+                document.body.appendChild(area);
+
+                area.select();
+
+                document.execCommand("copy");
+
+                area.remove();
+
+            }
+
+            btn.textContent = "COPIED!";
+
+            setTimeout(()=>{
+
+                btn.textContent = "COPY";
+
+            },1200);
+
+        };
+
+
+        row.appendChild(span);
+
+        row.appendChild(btn);
+
+        box.appendChild(row);
+
+    }
+
+}
+
+
+// MAIN GENERATOR
+
+function generatePasswords(){
+
+    const name = document
+    .getElementById("username")
+    .value.trim();
+
+    if(!name){
+
+        alert("Please Enter Your Name!");
+
+        return;
+
+    }
+
+    showPasswords("hard",name,"hard");
+
+    showPasswords("medium",name,"medium");
+
+    showPasswords("normal",name,"normal");
+
+}
+
+</script>
+
+</body>
+</html>
